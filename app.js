@@ -1,7 +1,6 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const userRoutes = require("./routes/users");
@@ -10,7 +9,8 @@ const movieRoutes = require("./routes/movies");
 const app = express(); // Initialize Express app
 
 // Middleware
-app.use(bodyParser.json());
+app.use(express.json()); // Replaces body-parser
+app.use(express.urlencoded({ extended: true })); // For URL-encoded data
 app.use(cors());
 
 // Routes
