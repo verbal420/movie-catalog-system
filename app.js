@@ -7,8 +7,7 @@ const cors = require("cors");
 const userRoutes = require("./routes/users");
 const movieRoutes = require("./routes/movies");
 
-const app = express();
-const PORT = process.env.PORT || 5000;
+const app = express(); // Initialize Express app
 
 // Middleware
 app.use(bodyParser.json());
@@ -24,6 +23,5 @@ mongoose
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.error("Error connecting to MongoDB:", err));
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// Export the Express app instance
+module.exports = app;

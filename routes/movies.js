@@ -12,7 +12,6 @@ const {
 
 const router = express.Router();
 
-// Movie routes
 router.post("/addMovie", authMiddleware, addMovie);
 router.get("/getMovies", getAllMovies);
 router.get("/getMovie/:id", getMovieById);

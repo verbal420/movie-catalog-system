@@ -1,4 +1,4 @@
-// Entry point for Render deployment
+// Entry point for the application
 const app = require("./app");
 
 const PORT = process.env.PORT || 5000;
